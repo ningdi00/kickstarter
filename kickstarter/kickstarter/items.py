@@ -11,4 +11,6 @@ import scrapy
 class KickstarterItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+
+    user = scrapy.Field()
+    user = scrapy.Field()
