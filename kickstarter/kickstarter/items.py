@@ -12,5 +12,11 @@ class KickstarterItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
 
-    user = scrapy.Field()
-    user = scrapy.Field()
+    project_name = scrapy.Field()
+    category_name = scrapy.Field()
+    project_tag = scrapy.Field() 
+    funding_period = scrapy.Field()
+    no_days = scrapy.Field()
+    no_backers = scrapy.Field()
+    money_pledged = scrapy.Field()
+    starter_location = scrapy.Field()
