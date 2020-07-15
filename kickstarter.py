@@ -115,10 +115,10 @@ for project in pro_href:
 
   if count%1000 == 0:
     df = pd.DataFrame(data_set)
-    df.to_csv('kickstarter.txt')
+    df.to_csv('kickstarter_2.txt')
 
 print('Job Completed!')
 df = pd.DataFrame(data_set)
-df.to_csv('kickstarter.txt')
+df.to_csv('kickstarter_2.txt')
 
 driver.quit()
