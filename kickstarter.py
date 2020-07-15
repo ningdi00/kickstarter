@@ -52,6 +52,10 @@ for project in pro_href:
   count+=1
   print("No of page parsed: %i" %(count))
 
+  if count%1000 == 0:
+    df = pd.DataFrame(data_set)
+    df.to_csv('kickstarter_1.txt')
+
 df = pd.DataFrame(data_set)
 df.to_csv('kickstarter_1.txt')
 
