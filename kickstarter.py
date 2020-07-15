@@ -11,6 +11,8 @@ data_set = []
 cat_id = []
 pro_href = []
 pages = list(range(201))
+count = 0
+cat_count = 0
 
 category = driver.find_elements_by_xpath('//ul[@class="js-categories columns2-sm relative z1 inline-block block-sm w50-sm"]/li')
 
@@ -24,6 +26,8 @@ for sub_page in cat_urls[0:501]:
     time.sleep(1)
     driver.get(sub_page)
     pro_urls = driver.find_elements_by_xpath('//div[@class="clamp-5 navy-500 mb3 hover-target"]/a')
+    cat_count+=1
+    print("No of category page parsed: %i" %(cat_count))
 
     for url in pro_urls:
         pro_href.append(url.get_attribute('href'))
@@ -45,6 +49,8 @@ for project in pro_href:
    pro_data['no_backers'] = int(''.join(re.findall('\d+', driver.find_element_by_xpath('//div[@class="NS_campaigns__spotlight_stats"]/b').text)))
   
   data_set.append(pro_data)
+  count+=1
+  print("No of page parsed: %i" %(count))
 
 df = pd.DataFrame(data_set)
 df.to_csv('kickstarter_1.txt')
